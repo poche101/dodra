@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | DODRA SOLUTIONS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #0f172a; scroll-behavior: smooth; }
+        
+        .glass-nav { 
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(15px); 
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .about-hero {
+            background: linear-gradient(rgba(10, 15, 29, 0.9), rgba(10, 15, 29, 0.9)), 
+                        url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Two-part Thicker Underline */
+        .heading-underline {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+        }
+        /* Main Part */
+        .heading-underline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 10px;
+            background: #2563eb;
+            border-radius: 10px;
+        }
+        /* Faded Part */
+        .heading-underline::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 80px;
+            width: 30px;
+            height: 10px;
+            background: #2563eb;
+            opacity: 0.25;
+            border-radius: 10px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+        }
+        .stat-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+        }
+
+        .reveal { animation: reveal 0.8s ease-out forwards; opacity: 0; }
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+   <header class="fixed w-full z-[100] glass-nav">
+    <nav class="container mx-auto py-4 px-6 flex justify-between items-center">
+        <a href="index.html">
+            <img src="/assets/img/dodra.png" alt="logo" class="w-32 md:w-40 h-auto">
+        </a>
+        
+        <div class="hidden lg:flex gap-10 text-[11px] font-extrabold uppercase tracking-widest text-slate-500">
+            <a href="/solutions-about.html" class="hover:text-blue-600 transition">About</a>
+            <a href="/solutions-service.html" class="hover:text-blue-600 transition">Services</a>
+            <a href="/solutions-contact.html" class="hover:text-blue-600 transition">Contact</a>
+        </div>
+        
+        <div class="flex items-center gap-4">
+            <a href="tel:09115151329" class="hidden md:flex items-center gap-2 text-[11px] font-bold text-slate-900">
+                <i class="fa-solid fa-phone text-blue-600"></i> HELP DESK
+            </a>
+            <button id="menu-trigger" class="lg:hidden text-slate-900 text-2xl p-2">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 z-[110] bg-[#0a0f1d] translate-x-full transition-transform duration-500 ease-in-out lg:hidden">
+    <div class="absolute inset-0 opacity-20 pointer-events-none" 
+         style="background: radial-gradient(circle at top right, #3b82f6, transparent 70%);"></div>
+
+    <div class="relative flex flex-col h-full p-10 z-10">
+        <div class="flex justify-between items-center mb-20">
+            <img src="/assets/img/dodra-white.png" alt="logo" style="width: 130px; height: auto;">
+            <button id="menu-close" class="group flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col gap-10 mb-auto">
+            <a href="/solutions-about.html" class="mobile-link group flex items-center gap-4 text-1xl font-extrabold text-white tracking-tighter transition-all duration-500">
+                <span class="text-blue-500 text-lg font-mono opacity-50">01</span> About Us
+            </a>
+            <a href="/solutions-service.html" class="mobile-link group flex items-center gap-4 text-1xl font-extrabold text-white tracking-tighter transition-all duration-500">
+                <span class="text-blue-500 text-lg font-mono opacity-50">02</span> Our Services
+            </a>
+            <a href="/solutions-contact.html" class="mobile-link group flex items-center gap-4 text-1xl font-extrabold text-white tracking-tighter transition-all duration-500">
+                <span class="text-blue-500 text-lg font-mono opacity-50">03</span> Contact Desk
+            </a>
+        </div>
+
+        <div class="border-t border-white/10 pt-10">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-8">
+                <div>
+                    <p class="text-[10px] font-black tracking-[0.4em] text-blue-500 mb-6 uppercase">Global Network</p>
+                    <div class="flex gap-8">
+                        <a href="https://www.instagram.com/dodrasolutions?igsh=MTJyZGQ0djZmbG95Ng%3D%3D&utm_source=qr" class="text-white/60 hover:text-white transition-all text-2xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@dodra.solutions?_r=1&_t=ZS-937LwTb7GU5" class="text-white/60 hover:text-white transition-all text-2xl"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://snapchat.com/t/F78SV1WD" class="text-white/60 hover:text-white transition-all text-2xl"><i class="fa-brands fa-snapchat"></i></a>
+                    </div>
+                </div>
+                <div class="block">
+                    <p class="text-[9px] font-bold text-white/30 tracking-widest uppercase mb-1">Direct Line</p>
+                    <p class="text-white font-bold text-sm">0911 515 1329 <br> 08187209915</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="about-hero pt-40 pb-32 text-white px-6">
+        <div class="container mx-auto text-center reveal">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter">Beyond Boundaries</h1>
+            <p class="text-blue-400 font-mono text-sm tracking-[0.3em] uppercase mb-12">The Story of Dodra Solutions</p>
+            <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+    </section>
+
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <h2 class="text-xs font-black text-blue-600 uppercase tracking-[0.3em] mb-4">Our Identity</h2>
+                    <h3 class="text-4xl font-black text-slate-900 mb-8 heading-underline">Redefining Digital <br> Asset Liquidity.</h3>
+                    <p class="text-slate-500 leading-relaxed mb-6">
+                        Founded on the principles of absolute integrity and technological speed, Dodra Solutions emerged to fill a critical gap in the global financial market: the need for a trustworthy bridge between traditional local currencies and the rapidly evolving world of digital assets.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                            <h4 class="text-blue-600 font-extrabold text-sm uppercase mb-2 tracking-widest"><i class="fa-solid fa-circle-check mr-2"></i> Mission Statement</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">To provide secure, transparent, and efficient financial exchange services, empowering individuals and businesses with seamless access to global currencies, digital assets, and value-driven transactions.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                            <h4 class="text-blue-600 font-extrabold text-sm uppercase mb-2 tracking-widest"><i class="fa-solid fa-star mr-2"></i> Vision Statement</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">To become a trusted and innovative financial solutions provider, bridging local and global markets through secure currency exchange, cryptocurrency trading, and digital asset services.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="stat-card p-6 rounded-3xl">
+                            <p class="text-3xl font-black text-blue-600 mb-1">24/7</p>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Active Support</p>
+                        </div>
+                        <div class="stat-card p-6 rounded-3xl">
+                            <p class="text-3xl font-black text-blue-600 mb-1"><span id="counter-100">0</span>%</p>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Secure Escrow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal" style="animation-delay: 0.2s;">
+                    <div class="rounded-[3rem] overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&q=80&w=1000" alt="Office" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 bg-blue-600 p-10 rounded-[2.5rem] hidden md:block">
+                        <i class="fa-solid fa-quote-left text-white/30 text-4xl mb-4 block"></i>
+                        <p class="text-white font-bold text-lg leading-tight">Trust is the only currency <br> that never loses value.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white border-y border-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-xs font-black text-blue-600 uppercase tracking-[0.3em] mb-4">Our DNA</h2>
+                <h3 class="text-4xl font-black text-slate-900 heading-underline">Core Values</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <div class="text-center reveal" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-handshake text-2xl"></i>
+                    </div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-slate-800">Trust & Transparency</h5>
+                </div>
+                <div class="text-center reveal" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-shield mr-1"></i>
+                    </div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-slate-800"> Security</h5>
+                </div>
+                <div class="text-center reveal" style="animation-delay: 0.3s;">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-bolt text-2xl"></i>
+                    </div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-slate-800">Speed</h5>
+                </div>
+                <div class="text-center reveal" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-user-tie text-2xl"></i>
+                    </div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-slate-800">Professionalism</h5>
+                </div>
+                <div class="text-center reveal" style="animation-delay: 0.5s;">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-globe text-2xl"></i>
+                    </div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-slate-800">Global Connectivity</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-900 text-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="reveal">
+                    <div class="w-14 h-14 bg-blue-600/20 border border-blue-600/30 rounded-2xl flex items-center justify-center text-blue-500 mb-8">
+                        <i class="fa-solid fa-fingerprint text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Elite Security</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">We prioritize security over everything. Every transaction is monitored by multi-layer verification protocols to ensure zero-risk operations.</p>
+                </div>
+                <div class="reveal" style="animation-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-blue-600/20 border border-blue-600/30 rounded-2xl flex items-center justify-center text-blue-500 mb-8">
+                        <i class="fa-solid fa-bolt text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Instant Execution</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">In the digital economy, seconds cost money. Our systems are optimized for instant liquidation and payment notification.</p>
+                </div>
+                <div class="reveal" style="animation-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-blue-600/20 border border-blue-600/30 rounded-2xl flex items-center justify-center text-blue-500 mb-8">
+                        <i class="fa-solid fa-globe text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Global Reach</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Whether it's US-based Gift Cards or decentralized Crypto, we bridge the distance between you and the global market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-white pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold text-slate-600 tracking-widest uppercase">
+                <p>&copy; 2026 DODRA ENTERPRISE | SOLUTIONS DIVISION</p>
+                <div class="flex gap-8">
+                    <span>Help Desk: 09115151329</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nav Toggle
+        const menuTrigger = document.getElementById('menu-trigger');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuTrigger.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+        menuClose.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+
+        // Intersection Observer for Reveal and Counter
+        const counterElement = document.getElementById('counter-100');
+        let counterStarted = false;
+
+        const startCounter = () => {
+            if (counterStarted) return;
+            counterStarted = true;
+            let count = 0;
+            const target = 100;
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // ~60fps
+
+            const updateCount = () => {
+                count += increment;
+                if (count < target) {
+                    counterElement.innerText = Math.floor(count);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counterElement.innerText = target;
+                }
+            };
+            updateCount();
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    // Check if the intersecting element contains the counter or is near it
+                    if (entry.target.contains(counterElement) || entry.target.classList.contains('stat-card')) {
+                        startCounter();
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

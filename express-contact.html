@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Dodra Express Operations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --brand-primary: #1e40af;
+            --brand-secondary: #0f172a;
+            --brand-accent: #3b82f6;
+        }
+        body { font-family: "Plus Jakarta Sans", sans-serif; background-color: #f8fafc; color: #0f172a; }
+
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+
+        .contact-card {
+            background: white;
+            border-radius: 3rem;
+            box-shadow: 0 50px 100px -20px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            overflow: hidden;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1.25rem;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            background: #f1f5f9;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: var(--brand-accent);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .social-pill {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 24px;
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .social-pill:hover {
+            transform: translateY(-3px);
+            border-color: var(--brand-accent);
+            color: var(--brand-accent);
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  (function() {
+    // Initialize with your Public Key
+    emailjs.init('yoTw-TTxa4sV6ige2');
+  })();
+    </script>
+</head>
+<body>
+
+   <header class="fixed w-full z-[100] glass-nav border-b border-slate-100">
+      <nav class="container mx-auto py-4 px-6 flex justify-between items-center">
+        <a href="index.html">
+          <img src="/assets/img/dodra.png" alt="logo" class="w-32 md:w-40 h-auto">
+        </a>
+        
+        <div class="hidden lg:flex gap-10 text-[11px] font-extrabold uppercase tracking-widest text-slate-500">
+          <a href="express-about.html" class="hover:text-blue-600 transition">About</a>
+          <a href="express-services.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Services</a>
+          <a href="express-contact.html" class="hover:text-blue-600 transition">Contact</a>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <a href="tel:09115151329" class="hidden md:flex items-center gap-2 text-[11px] font-bold text-slate-900 bg-slate-100/50 px-4 py-2 rounded-full border border-slate-200">
+            <i class="fa-solid fa-phone text-blue-600"></i> HELP DESK
+          </a>
+          <button id="menu-trigger" class="lg:hidden text-slate-900 text-2xl p-2 focus:outline-none">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    
+   <div id="mobile-menu" class="fixed inset-0 z-[110] bg-[#0a0f1d] translate-x-full transition-transform duration-500 ease-in-out lg:hidden overflow-y-auto">
+  <div class="absolute inset-0 opacity-20 pointer-events-none" style="background: radial-gradient(circle at top right, #3b82f6, transparent 70%);"></div>
+  
+  <div class="relative flex flex-col h-full min-h-screen p-8 z-10">
+    <div class="flex justify-between items-center mb-12">
+      <img src="/assets/img/dodra-white.png" alt="logo" style="width: 120px; height: auto;">
+      <button id="menu-close" class="group flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+    </div>
+
+    <div class="flex flex-col gap-8 mb-12">
+      <a href="express-about.html" class="mobile-link group flex items-center gap-4 text-2xl font-extrabold text-white tracking-tighter" style="transition-delay: 0.1s;">
+        <span class="text-blue-500 text-sm font-mono opacity-50">01</span> About Us
+      </a>
+      <a href="express-services.html" class="mobile-link group flex items-center gap-4 text-2xl font-extrabold text-white tracking-tighter" style="transition-delay: 0.2s;">
+        <span class="text-blue-500 text-sm font-mono opacity-50">02</span> Our Services
+      </a>
+      <a href="express-contact.html" class="mobile-link group flex items-center gap-4 text-2xl font-extrabold text-white tracking-tighter" style="transition-delay: 0.3s;">
+        <span class="text-blue-500 text-sm font-mono opacity-50">03</span> Contact Desk
+      </a>
+    </div>
+
+    <div class="mt-auto pt-10 border-t border-white/10">
+      <p class="text-blue-500 text-[10px] font-black uppercase tracking-[0.3em] mb-6">Connect With Us</p>
+      
+      <div class="grid grid-cols-1 gap-5 mb-10">
+        <div class="flex items-center gap-4 group">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#ff0050] group-hover:border-[#ff0050] transition-all duration-300">
+            <a href="https://www.tiktok.com/@dodra.expres?_r=1&_t=ZS-937KkCD6NTE">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">TikTok</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 group">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-gradient-to-tr group-hover:from-[#f9ce34] group-hover:via-[#ee2a7b] group-hover:to-[#6228d7] transition-all duration-300">
+           <a href="https://www.instagram.com/dodraexpress?igsh=b3l6bmRwMXh5ZjZ4&utm_source=qr">
+             <i class="fa-brands fa-instagram"></i>
+           </a>
+          </div>
+          <div class="flex flex-col">
+                <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Instagram</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 group">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#FFFC00] group-hover:text-black transition-all duration-300">
+            <a href="">
+                <i class="fa-brands fa-snapchat"></i>
+            </a>
+          </div>
+          <div class="flex flex-col">
+                <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Snapchat</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-600/10 border border-blue-500/20 rounded-2xl p-5">
+        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Direct Line</p>
+        <a href="tel:08146978573" class="text-white font-black text-xl tracking-tighter flex items-center gap-3">
+          <i class="fa-solid fa-headset text-blue-500 text-sm"></i> 0814 697 8573
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-blue-600 font-bold tracking-[0.4em] text-[10px] uppercase block mb-4">Get In Touch</span>
+                <h1 class="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-none mb-6">Let's start a <br><span class="text-blue-600">Conversation.</span></h1>
+                <p class="text-slate-500 text-xl font-light leading-relaxed">Have a project in mind or need help with operations? Our expert team is ready to deploy solutions for your business.</p>
+            </div>
+
+            <div class="contact-card flex flex-col lg:flex-row">
+                
+                <div class="lg:w-2/5 bg-slate-900 p-10 md:p-16 text-white relative">
+                    <div class="relative z-10 h-full flex flex-col">
+                        <h3 class="text-3xl font-bold mb-10">Direct Reach</h3>
+                        
+                        <div class="space-y-10">
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">Call Our Expert</p>
+                                    <a href="tel:08146978573" class="text-xl font-bold hover:text-blue-400 transition">0814 697 8573</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">HQ Location</p>
+                                    <p class="text-lg font-bold">Lagos, Nigeria</p>
+                                    <p class="text-slate-500 font-light italic">Serving Individuals & Businesses Nationwide</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-20">
+                            <p class="text-slate-500 text-[10px] font-black uppercase tracking-[0.3em] mb-6">Digital Presence</p>
+                            <div class="flex flex-wrap gap-3">
+                                <a href="https://tiktok.com/@dodra.express" class="social-pill text-slate-900"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                                <a href="https://instagram.com/dodrasolutions" class="social-pill text-slate-900"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="#" class="social-pill text-slate-900"><i class="fa-brands fa-snapchat"></i> Snapchat</a>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto pt-10">
+                            <p class="text-blue-500 font-bold text-sm">Core Values</p>
+                            <p class="text-slate-400 text-xs font-light">Efficiency • Reliability • Customer First • Integrity • Excellence</p>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute bottom-0 right-0 opacity-10 pointer-events-none translate-y-1/4 translate-x-1/4">
+                        <i class="fa-solid fa-paper-plane text-[20rem]"></i>
+                    </div>
+                </div>
+
+                <div class="lg:w-3/5 p-10 md:p-16 bg-white">
+                   <form id="form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-2">Full Name</label>
+                                <input type="text" name="full_name" placeholder="John Doe" class="form-input" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-2">Email Address</label>
+                                <input type="email" name="email_address" placeholder="john@company.com" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-2">Select Service</label>
+                            <select name="service_type" class="form-input appearance-none">
+                                <option>Professional Laundry</option>
+                                <option>Secure Packaging</option>
+                                <option>Import & Export Operations</option>
+                                <option>Local & International Logistics</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-2">Your Message</label>
+                            <textarea name="message" rows="5" placeholder="Tell us how we can help your business..." class="form-input" required></textarea>
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="submit" id="button" class="w-full bg-blue-600 hover:bg-slate-900 text-white font-black py-5 rounded-2xl tracking-[0.2em] text-xs uppercase shadow-xl shadow-blue-600/20 transition-all duration-500 flex items-center justify-center gap-4">
+                                Send Message <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            
+                            <p id="form-status" class="text-center text-[11px] mt-6 font-bold uppercase tracking-wider hidden"></p>
+                            
+                            <p class="text-center text-slate-400 text-[10px] mt-2 font-medium">We typically respond within 2 business hours.</p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white py-12 border-t border-slate-100">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-[9px] text-slate-400 font-bold uppercase tracking-[0.5em]">
+                © 2026 DODRA ENTERPRISE | EXPRESS DIVISION
+            </p>
+        </div>
+    </footer>
+
+
+     <script>
+        const menuTrigger = document.getElementById('menu-trigger');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Open Menu
+        menuTrigger.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        // Close Menu
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+
+        // Close menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+
+     <script type="text/javascript">
+    const btn = document.getElementById('button');
+    const statusMsg = document.getElementById('form-status');
+    const contactForm = document.getElementById('form');
+
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Update button state
+        const originalContent = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = 'Sending...';
+
+        // EmailJS IDs
+        const serviceID = 'service_1dsd0fv';
+        const templateID = 'template_m4f7qj9';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                // Success State
+                btn.disabled = false;
+                btn.innerHTML = originalContent;
+                
+                statusMsg.classList.remove('hidden', 'text-red-500');
+                statusMsg.classList.add('text-emerald-500');
+                statusMsg.innerText = '✓ Message sent successfully!';
+                
+                contactForm.reset(); // Clear the form
+            }, (err) => {
+                // Error State
+                btn.disabled = false;
+                btn.innerHTML = originalContent;
+                
+                statusMsg.classList.remove('hidden', 'text-emerald-500');
+                statusMsg.classList.add('text-red-500');
+                statusMsg.innerText = '✘ Failed to send. Please try again.';
+                
+                console.error('EmailJS Error:', err);
+            });
+    });
+</script>
+
+</body>
+</html>

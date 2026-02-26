@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DODRA | Enterprise & Global Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfd; color: #1a1a1a; scroll-behavior: smooth; }
+        
+        .glass-light { 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Thick 2-Part Single Underline */
+        .thick-split-underline {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 16px;
+        }
+        .thick-split-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 6px; /* Thick bar */
+            background: linear-gradient(to right, #3b82f6 40%, #cbd5e1 40%);
+            border-radius: 4px;
+        }
+
+        .hero-overlay { background: linear-gradient(to right, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0.1)); }
+        .swiper-pagination-bullet-active { background: #3b82f6 !important; width: 30px !important; border-radius: 4px !important; }
+    </style>
+</head>
+<body>
+
+    <header class="fixed w-full z-[100]">
+        <div class="bg-slate-900 py-2.5 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between text-[10px] font-extrabold tracking-[0.2em] text-slate-400">
+                <div class="flex gap-8 uppercase">
+                    <span class="flex items-center gap-2">
+                        <i class="fa-solid fa-cube text-blue-500"></i> Dodra Enterprise
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fa-solid fa-envelope-open-text text-blue-500"></i> EMAIL: Info@dodraenterprise.ng
+                    </span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="tel:08146978573" class="hover:text-white transition flex items-center gap-2">
+                        <i class="fa-solid fa-phone-arrow-up-right text-blue-500"></i> CONTACT US: | DODRA EXPRESS:08146978573 | DODRA SOLUTIONS: 09115151329/08187209915
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+       <nav class="glass-light mt-2 mx-4 md:mx-10 rounded-2xl py-4 px-8 flex justify-between items-center shadow-lg shadow-slate-200/50">
+    <div class="flex items-center gap-3">
+        <div class="flex flex-col leading-none">
+            <img src="/assets/img/dodra.png" alt="logo" style="width: 145px; height: 65px;">
+        </div>
+    </div>
+    
+    <div class="hidden lg:flex gap-10 text-[11px] font-bold uppercase tracking-widest text-slate-600">
+        <a href="/solutions.html" class="hover:text-blue-600 transition">Dodra Solutions</a>
+        <a href="/express.html" class="hover:text-blue-600 transition">Dodra Express</a>
+    </div>
+    
+    <div class="flex items-center gap-4">
+        <button class="hidden md:block bg-slate-900 text-white px-7 py-3 rounded-xl text-xs font-bold hover:bg-blue-600 transition-all duration-300 shadow-lg shadow-slate-300">
+            INQUIRIES
+        </button>
+
+        <button id="menu-trigger" class="lg:hidden text-slate-900 text-2xl p-2 focus:outline-none">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </div>
+</nav>
+
+<div id="mobile-menu" class="fixed inset-0 z-[110] bg-slate-900 translate-x-full transition-transform duration-500 ease-in-out lg:hidden">
+    
+    <div class="absolute inset-0 opacity-20 pointer-events-none" 
+         style="background: radial-gradient(circle at top right, #3b82f6, transparent 70%);"></div>
+
+    <div class="relative flex flex-col h-full p-10 z-10">
+        
+        <div class="flex justify-between items-center mb-20">
+            <img src="/assets/img/dodra-white.png" alt="logo" style="width: 130px; height: auto; filter: brightness(0) invert(1);">
+            
+            <button id="menu-close" class="group flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col gap-10 mb-auto">
+            <a href="/solutions.html" class="mobile-link group flex items-center gap-4 text-2xl font-extrabold text-white tracking-tighter opacity-0 translate-y-4 transition-all duration-500">
+                <span class="text-blue-500 text-lg font-mono opacity-50 group-hover:opacity-100 transition-opacity">01</span>
+                Dodra Solutions
+            </a>
+            <a href="/express.html" class="mobile-link group flex items-center gap-4 text-2xl font-extrabold text-white tracking-tighter opacity-0 translate-y-4 transition-all duration-500">
+                <span class="text-blue-500 text-lg font-mono opacity-50 group-hover:opacity-100 transition-opacity">02</span>
+                Dodra Express
+            </a>
+        </div>
+
+        <div class="border-t border-white/10 pt-10">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-8">
+                <div>
+                    <p class="text-[10px] font-black tracking-[0.4em] text-blue-500 mb-6 uppercase">Global Network</p>
+                    <div class="flex gap-8">
+                        <a href="#" class="text-white/60 hover:text-white transition-all text-2xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white/60 hover:text-white transition-all text-2xl"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="text-white/60 hover:text-white transition-all text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="text-white/60 hover:text-white transition-all text-2xl"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block text-right">
+                    <p class="text-[9px] font-bold text-white/30 tracking-widest uppercase mb-1">Support Line</p>
+                    <a href="tel:09115151329" class="text-white font-bold text-sm">0911 515 1329</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </header>
+
+ <style>
+    /* Ultra-Sleek Glassmorphism & Masking */
+    .hero-gradient-mask {
+        background: linear-gradient(to right, 
+            rgba(15, 23, 42, 0.95) 0%, 
+            rgba(15, 23, 42, 0.8) 40%, 
+            rgba(15, 23, 42, 0) 100%);
+    }
+
+    .content-focus {
+        backdrop-filter: blur(4px);
+        background: rgba(255, 255, 255, 0.03);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 2rem;
+    }
+
+    .text-kerning {
+        letter-spacing: -0.05em;
+        line-height: 0.9;
+    }
+
+    /* Custom Scroll/Pagination */
+    .swiper-pagination-bullet { 
+        background: #fff !important; 
+        opacity: 0.2; 
+        height: 2px !important; 
+        width: 20px !important; 
+        border-radius: 0 !important; 
+    }
+    .swiper-pagination-bullet-active { 
+        opacity: 1; 
+        background: #3b82f6 !important; 
+        width: 40px !important; 
+    }
+</style>
+
+<section class="h-screen swiper mySwiper bg-slate-950">
+    <div class="swiper-wrapper">
+        
+        <div class="swiper-slide relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&q=80&w=2000" 
+                 class="absolute inset-0 w-full h-full object-cover scale-105" alt="Logistics">
+            
+            <div class="absolute inset-0 hero-gradient-mask"></div>
+
+            <div class="relative h-full container mx-auto px-6 md:px-20 flex items-center">
+                <div class="max-w-3xl content-focus">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="h-[1px] w-8 bg-blue-500"></span>
+                        <span class="text-blue-500 font-bold tracking-[0.4em] text-[9px] uppercase">Logistics & Lifestyle</span>
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-9xl font-black text-white mb-8 text-kerning">
+                        DODRA<br><span class="text-transparent" style="-webkit-text-stroke: 1px rgba(255,255,255,0.8);">EXPRESS.</span>
+                    </h1>
+                    
+                    <p class="text-slate-400 text-sm md:text-base max-w-lg mb-10 leading-relaxed tracking-wide">
+                        Precision-led logistics and premium lifestyle services. From <span class="text-white">Professional Laundry</span> to <span class="text-white">Global Freight</span>, we deliver excellence at scale.
+                    </p>
+                    
+                    <a href="#express" class="group inline-flex items-center gap-4 text-white text-[10px] font-bold tracking-[0.3em] uppercase transition-all">
+                        <span class="bg-blue-600 p-4 rounded-full group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </span>
+                        Explore Division
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-slide relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
+                 class="absolute inset-0 w-full h-full object-cover scale-105" alt="Enterprise">
+            
+            <div class="absolute inset-0 hero-gradient-mask"></div>
+
+            <div class="relative h-full container mx-auto px-6 md:px-20 flex items-center">
+                <div class="max-w-3xl content-focus">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="h-[1px] w-8 bg-blue-500"></span>
+                        <span class="text-blue-500 font-bold tracking-[0.4em] text-[9px] uppercase">Global Strategy Division</span>
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-9xl font-black text-white mb-8 text-kerning">
+                        DODRA<br><span class="text-transparent" style="-webkit-text-stroke: 1px rgba(255,255,255,0.8);">SOLUTIONS</span>
+                    </h1>
+                    
+                    <p class="text-slate-400 text-sm md:text-base max-w-lg mb-10 leading-relaxed tracking-wide">
+                        An ecosystem for <span class="text-white">Global Trade</span> and <span class="text-white">Financial Solutions</span>. We integrate digital assets with traditional commerce.
+                    </p>
+                    
+                    <a href="/solutions.html" class="group inline-flex items-center gap-4 text-white text-[10px] font-bold tracking-[0.3em] uppercase transition-all">
+                        <span class="bg-white text-slate-900 p-4 rounded-full group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </span>
+                        View Solutions
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="swiper-pagination !bottom-16 !left-auto !right-20 !w-auto"></div>
+</section>
+
+    <footer id="contact" class="bg-slate-950 text-white py-12 border-t border-white/5">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center text-center space-y-8">
+            
+            <div>
+                <img src="/assets/img/dodra-white.png" alt="Dodra Logo" style="width: 120px; filter: brightness(0) invert(1);" class="opacity-80">
+            </div>
+
+            <div class="w-full pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-6 text-[10px] text-slate-500 tracking-[0.2em] font-bold uppercase">
+                    <p>&copy; 2026 DODRA ENTERPRISE</p>
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                </div>
+                <div class="text-[9px] text-slate-600 font-medium tracking-widest uppercase">
+                    DODRA TECH SOLUTIONS
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            effect: "fade",
+            autoplay: { delay: 6000 },
+            pagination: { el: ".swiper-pagination", clickable: true },
+        });
+    </script>
+
+    <script>
+    const menuTrigger = document.getElementById('menu-trigger');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    const toggleMenu = (isOpen) => {
+        if (isOpen) {
+            mobileMenu.classList.remove('translate-x-full');
+            // Staggered Animation
+            mobileLinks.forEach((link, index) => {
+                setTimeout(() => {
+                    link.classList.remove('opacity-0', 'translate-y-4');
+                    link.classList.add('opacity-100', 'translate-y-0');
+                }, 100 * (index + 1));
+            });
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            mobileLinks.forEach(link => {
+                link.classList.add('opacity-0', 'translate-y-4');
+                link.classList.remove('opacity-100', 'translate-y-0');
+            });
+        }
+    };
+
+    menuTrigger.addEventListener('click', () => toggleMenu(true));
+    menuClose.addEventListener('click', () => toggleMenu(false));
+    
+    // Close menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+    });
+</script>
+</body>
+</html>

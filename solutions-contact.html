@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Our Desk | DODRA SOLUTIONS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #ffffff;
+        color: #0f172a;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      /* Hero Styling */
+      .hero-gradient {
+        background: radial-gradient(circle at 70% 30%, #eff6ff 0%, #ffffff 60%);
+        position: relative;
+      }
+
+      .hero-shape {
+        position: absolute;
+        top: -10%;
+        right: -5%;
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.05) 0%,
+          rgba(37, 99, 235, 0.05) 100%
+        );
+        border-radius: 50%;
+        filter: blur(80px);
+        z-index: -1;
+      }
+
+      /* Two-part Underline UI */
+      .heading-underline {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 20px;
+      }
+      .heading-underline::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 6px;
+        background: #2563eb;
+        border-radius: 10px;
+      }
+      .heading-underline::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 70px;
+        width: 25px;
+        height: 6px;
+        background: #2563eb;
+        opacity: 0.3;
+        border-radius: 10px;
+      }
+
+      /* Professional Input Styling */
+      .form-input {
+        width: 100%;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 1.25rem;
+        padding: 1.25rem 1.5rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
+      }
+
+      .form-input:focus {
+        background: #ffffff;
+        border-color: #3b82f6;
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* Contact Card Hover */
+      .contact-card {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+      .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.08);
+        border-color: #3b82f6;
+      }
+
+      .reveal {
+        animation: reveal 1s ease-out forwards;
+        opacity: 0;
+      }
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  (function() {
+    // Initialize with your Public Key
+    emailjs.init({
+      publicKey: "yoTw-TTxa4sV6ige2",
+    });
+  })();
+</script>
+
+  </head>
+  <body class="hero-gradient">
+    <div class="hero-shape"></div>
+
+    <header class="fixed w-full z-[100] glass-nav">
+      <nav
+        class="container mx-auto py-4 px-6 flex justify-between items-center"
+      >
+        <a href="index.html">
+          <img
+            src="/assets/img/dodra.png"
+            alt="logo"
+            class="w-32 md:w-40 h-auto"
+          />
+        </a>
+
+        <div
+          class="hidden lg:flex gap-10 text-[11px] font-extrabold uppercase tracking-widest text-slate-500"
+        >
+          <a href="/solutions-about.html" class="hover:text-blue-600 transition"
+            >About</a
+          >
+          <a
+            href="/solutions-service.html"
+            class="hover:text-blue-600 transition"
+            >Services</a
+          >
+          <a
+            href="/solutions-contact.html"
+            class="hover:text-blue-600 transition"
+            >Contact</a
+          >
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="tel:09115151329"
+            class="hidden md:flex items-center gap-2 text-[11px] font-bold text-slate-900"
+          >
+            <i class="fa-solid fa-phone text-blue-600"></i> HELP DESK
+          </a>
+          <button
+            id="menu-trigger"
+            class="lg:hidden text-slate-900 text-2xl p-2"
+          >
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-[110] bg-[#0a0f1d] translate-x-full transition-transform duration-500 ease-in-out lg:hidden"
+    >
+      <div
+        class="absolute inset-0 opacity-20 pointer-events-none"
+        style="
+          background: radial-gradient(
+            circle at top right,
+            #3b82f6,
+            transparent 70%
+          );
+        "
+      ></div>
+
+      <div class="relative flex flex-col h-full p-10 z-10">
+        <div class="flex justify-between items-center mb-20">
+          <img
+            src="/assets/img/dodra-white.png"
+            alt="logo"
+            style="width: 130px; height: auto"
+          />
+          <button
+            id="menu-close"
+            class="group flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300"
+          >
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+
+        <div class="flex flex-col gap-10 mb-auto">
+          <a
+            href="/solutions-about.html"
+            class="mobile-link group flex items-center gap-4 text-1xl font-extrabold text-white tracking-tighter transition-all duration-500"
+          >
+            <span class="text-blue-500 text-lg font-mono opacity-50">01</span>
+            About Us
+          </a>
+          <a
+            href="/solutions-service.html"
+            class="mobile-link group flex items-center gap-4 text-1xl font-extrabold text-white tracking-tighter transition-all duration-500"
+          >
+            <span class="text-blue-500 text-lg font-mono opacity-50">02</span>
+            Our Services
+          </a>
+          <a
+            href="/solutions-contact.html"
+            class="mobile-link group flex items-center gap-4 text-1xl font-extrabold text-white tracking-tighter transition-all duration-500"
+          >
+            <span class="text-blue-500 text-lg font-mono opacity-50">03</span>
+            Contact Desk
+          </a>
+        </div>
+
+        <div class="border-t border-white/10 pt-10">
+          <div
+            class="flex flex-col md:flex-row md:justify-between md:items-center gap-8"
+          >
+            <div>
+              <p
+                class="text-[10px] font-black tracking-[0.4em] text-blue-500 mb-6 uppercase"
+              >
+                Global Network
+              </p>
+              <div class="flex gap-8">
+                <a
+                  href="https://www.instagram.com/dodrasolutions?igsh=MTJyZGQ0djZmbG95Ng%3D%3D&utm_source=qr"
+                  class="text-white/60 hover:text-white transition-all text-2xl"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.tiktok.com/@dodra.solutions?_r=1&_t=ZS-937LwTb7GU5"
+                  class="text-white/60 hover:text-white transition-all text-2xl"
+                  ><i class="fa-brands fa-tiktok"></i
+                ></a>
+                <a
+                  href="https://snapchat.com/t/F78SV1WD"
+                  class="text-white/60 hover:text-white transition-all text-2xl"
+                  ><i class="fa-brands fa-snapchat"></i
+                ></a>
+              </div>
+            </div>
+            <div class="block">
+              <p
+                class="text-[9px] font-bold text-white/30 tracking-widest uppercase mb-1"
+              >
+                Direct Line
+              </p>
+              <p class="text-white font-bold text-sm">
+                0911 515 1329 <br />
+                08187209915
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="pt-48 pb-20 overflow-hidden">
+        <div class="container mx-auto px-6">
+          <div class="max-w-4xl reveal">
+            <span
+              class="inline-block px-4 py-1.5 mb-6 border border-blue-100 rounded-full bg-blue-50/50 text-blue-600 text-[10px] font-bold tracking-[0.3em] uppercase"
+            >
+              Connect With Our Experts
+            </span>
+            <h1
+              class="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-10 heading-underline"
+            >
+              Elevate Your <br /><span class="text-blue-600"
+                >Global Strategy.</span
+              >
+            </h1>
+            <p
+              class="text-slate-500 text-xl md:text-2xl max-w-2xl font-light leading-relaxed"
+            >
+              Access premium liquidity and digital asset solutions through our
+              dedicated professional desk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pb-32">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div
+              class="lg:col-span-4 space-y-8 reveal"
+              style="animation-delay: 0.2s"
+            >
+              <div class="mb-8">
+                <h3
+                  class="text-xs font-black text-blue-600 uppercase tracking-[0.3em] mb-4"
+                >
+                  Direct Access
+                </h3>
+                <h2
+                  class="text-3xl font-black text-slate-900 heading-underline"
+                >
+                  Reach Our Desk
+                </h2>
+              </div>
+
+              <a
+                href="https://wa.me/2349115151329"
+                class="group block contact-card p-10 rounded-[2.5rem] bg-white"
+              >
+                <div
+                  class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-8 text-2xl group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h4 class="font-extrabold text-slate-900 text-xl mb-3">
+                  Instant Trading
+                </h4>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                  Real-time settlement and encrypted communication for
+                  high-volume orders.
+                </p>
+                <div
+                  class="flex items-center gap-3 text-blue-600 font-bold text-xs uppercase tracking-widest"
+                >
+                  Chat with Desk
+                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </div>
+              </a>
+
+              <div class="contact-card p-10 rounded-[2.5rem] bg-white">
+                <div
+                  class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 text-2xl"
+                >
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <h4 class="font-extrabold text-slate-900 text-xl mb-3">
+                  Voice Hotline
+                </h4>
+                <div class="space-y-1">
+                  <p class="text-slate-900 font-bold">0911 515 1329</p>
+                  <p class="text-slate-900 font-bold">0818 720 9915</p>
+                </div>
+                <p
+                  class="text-slate-400 text-[10px] mt-4 font-bold uppercase tracking-widest"
+                >
+                  Available 24/7 Global Support
+                </p>
+              </div>
+            </div>
+
+            <div class="lg:col-span-8 reveal" style="animation-delay: 0.4s">
+              <div
+                class="bg-white rounded-[3.5rem] p-10 md:p-20 shadow-2xl shadow-blue-900/5 border border-slate-50 relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[5rem] -mr-16 -mt-16 opacity-50"
+                ></div>
+
+                <div class="relative z-10">
+                  <h3
+                    class="text-4xl font-black text-slate-900 mb-12 heading-underline"
+                  >
+                    Inquiry Form
+                  </h3>
+
+                <form class="space-y-4" id="form">
+                <div class="grid grid-cols-2 gap-4">
+                    <input
+                    type="text"
+                    name="first_name"
+                    placeholder="First Name"
+                    required
+                    class="bg-slate-50 border-none rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-blue-600 transition"
+                    />
+                    <input
+                    type="text"
+                    name="last_name"
+                    placeholder="Last Name"
+                    required
+                    class="bg-slate-50 border-none rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-blue-600 transition"
+                    />
+                </div>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required
+                    class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-blue-600 transition"
+                />
+                <select
+                    name="service"
+                    required
+                    class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-blue-600 transition text-slate-500"
+                >
+                    <option value="" disabled selected>Interested Service</option>
+                    <option value="Currency Exchange">Currency Exchange</option>
+                    <option value="Gift Cards">Gift Cards</option>
+                    <option value="Crypto Trading">Crypto Trading</option>
+                </select>
+                <textarea
+                    name="message"
+                    placeholder="Message"
+                    rows="4"
+                    required
+                    class="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-blue-600 transition"
+                ></textarea>
+                <button
+                    id="button"
+                    type="submit"
+                    class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-slate-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    SEND MESSAGE
+                </button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-slate-950 text-white py-20">
+      <div class="container mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-10"
+        >
+          <div>
+            <img
+              src="/assets/img/dodra-white.png"
+              class="w-32 mb-6"
+              alt="Dodra"
+            />
+            <p
+              class="text-slate-500 text-[10px] font-bold tracking-[0.2em] uppercase"
+            >
+              © 2026 DODRA ENTERPRISE | SOLUTIONS DIVISION
+            </p>
+          </div>
+          <div class="flex gap-8">
+            <a
+              href="#"
+              class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all text-lg"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all text-lg"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+            <a
+              href="#"
+              class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all text-lg"
+              ><i class="fa-brands fa-snapchat"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuTrigger = document.getElementById("menu-trigger");
+      const menuClose = document.getElementById("menu-close");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuTrigger?.addEventListener("click", () =>
+        mobileMenu.classList.remove("translate-x-full"),
+      );
+      menuClose?.addEventListener("click", () =>
+        mobileMenu.classList.add("translate-x-full"),
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("reveal");
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+
+    <script>
+       const btn = document.getElementById('button');
+const contactForm = document.getElementById('form');
+
+contactForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Change button state
+  btn.innerText = 'SENDING...';
+  btn.disabled = true;
+
+  const serviceID = 'service_fyadrql';
+  const templateID = 'template_6ntmwfk';
+
+  emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.innerText = 'MESSAGE SENT!';
+      btn.style.backgroundColor = '#22c55e'; // Green success color
+      
+      contactForm.reset(); // Clear the form
+      
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        btn.innerText = 'SEND MESSAGE';
+        btn.style.backgroundColor = '';
+        btn.disabled = false;
+      }, 3000);
+
+    }, (err) => {
+      btn.innerText = 'SEND FAILED';
+      btn.style.backgroundColor = '#ef4444'; // Red error color
+      
+      alert('Oops! Something went wrong. Please try again.');
+      console.error('EmailJS Error:', err);
+      
+      setTimeout(() => {
+        btn.innerText = 'SEND MESSAGE';
+        btn.style.backgroundColor = '';
+        btn.disabled = false;
+      }, 3000);
+    });
+});
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | Dodra Express Operations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --brand-primary: #1e40af;
+        --brand-secondary: #0f172a;
+        --brand-accent: #3b82f6;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #ffffff;
+        color: #0f172a;
+        scroll-behavior: smooth;
+      }
+
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+
+      /* PRECISE UNDERLINE */
+      .heading-underline {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 12px;
+      }
+
+      .heading-underline::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--brand-accent);
+        border-radius: 2px;
+        transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .service-card:hover .heading-underline::after {
+        width: 100%;
+      }
+
+      /* PREMIUM CARD ANIMATIONS */
+      .service-card {
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.12);
+      }
+
+      .image-zoom {
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .service-card:hover .image-zoom {
+        transform: scale(1.08);
+      }
+
+      .btn-elegant {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-elegant:hover {
+        letter-spacing: 1px;
+        background: var(--brand-primary);
+        color: white;
+      }
+
+      .services-hero {
+        position: relative;
+        height: 70vh;
+        min-height: 600px;
+        background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+      }
+      
+      .services-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 100%);
+      }
+
+      /* MOBILE MENU STYLES */
+      .mobile-link {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.4s ease;
+      }
+
+      #mobile-menu.active .mobile-link {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="fixed w-full z-[100] glass-nav border-b border-slate-100">
+      <nav class="container mx-auto py-4 px-6 flex justify-between items-center">
+        <a href="index.html">
+          <img src="/assets/img/dodra.png" alt="logo" class="w-32 md:w-40 h-auto">
+        </a>
+        
+        <div class="hidden lg:flex gap-10 text-[11px] font-extrabold uppercase tracking-widest text-slate-500">
+          <a href="express-about.html" class="hover:text-blue-600 transition">About</a>
+          <a href="express-services.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Services</a>
+          <a href="express-contact.html" class="hover:text-blue-600 transition">Contact</a>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <a href="tel:09115151329" class="hidden md:flex items-center gap-2 text-[11px] font-bold text-slate-900 bg-slate-100/50 px-4 py-2 rounded-full border border-slate-200">
+            <i class="fa-solid fa-phone text-blue-600"></i> HELP DESK
+          </a>
+          <button id="menu-trigger" class="lg:hidden text-slate-900 text-2xl p-2 focus:outline-none">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+   <div id="mobile-menu" class="fixed inset-0 z-[110] bg-[#0a0f1d] translate-x-full transition-transform duration-500 ease-in-out lg:hidden overflow-y-auto">
+  <div class="absolute inset-0 opacity-20 pointer-events-none" style="background: radial-gradient(circle at top right, #3b82f6, transparent 70%);"></div>
+  
+  <div class="relative flex flex-col h-full min-h-screen p-8 z-10">
+    <div class="flex justify-between items-center mb-12">
+      <img src="/assets/img/dodra-white.png" alt="logo" style="width: 120px; height: auto;">
+      <button id="menu-close" class="group flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+    </div>
+
+    <div class="flex flex-col gap-8 mb-12">
+      <a href="express-about.html" class="mobile-link group flex items-center gap-4 text-2xl font-extrabold text-white tracking-tighter" style="transition-delay: 0.1s;">
+        <span class="text-blue-500 text-sm font-mono opacity-50">01</span> About Us
+      </a>
+      <a href="express-services.html" class="mobile-link group flex items-center gap-4 text-2xl font-extrabold text-white tracking-tighter" style="transition-delay: 0.2s;">
+        <span class="text-blue-500 text-sm font-mono opacity-50">02</span> Our Services
+      </a>
+      <a href="express-contact.html" class="mobile-link group flex items-center gap-4 text-2xl font-extrabold text-white tracking-tighter" style="transition-delay: 0.3s;">
+        <span class="text-blue-500 text-sm font-mono opacity-50">03</span> Contact Desk
+      </a>
+    </div>
+
+    <div class="mt-auto pt-10 border-t border-white/10">
+      <p class="text-blue-500 text-[10px] font-black uppercase tracking-[0.3em] mb-6">Connect With Us</p>
+      
+      <div class="grid grid-cols-1 gap-5 mb-10">
+        <div class="flex items-center gap-4 group">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#ff0050] group-hover:border-[#ff0050] transition-all duration-300">
+            <a href="https://www.tiktok.com/@dodra.expres?_r=1&_t=ZS-937KkCD6NTE">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">TikTok</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 group">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-gradient-to-tr group-hover:from-[#f9ce34] group-hover:via-[#ee2a7b] group-hover:to-[#6228d7] transition-all duration-300">
+           <a href="https://www.instagram.com/dodraexpress?igsh=b3l6bmRwMXh5ZjZ4&utm_source=qr">
+             <i class="fa-brands fa-instagram"></i>
+           </a>
+          </div>
+          <div class="flex flex-col">
+                <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Instagram</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 group">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#FFFC00] group-hover:text-black transition-all duration-300">
+            <a href="">
+                <i class="fa-brands fa-snapchat"></i>
+            </a>
+          </div>
+          <div class="flex flex-col">
+                <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Snapchat</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-600/10 border border-blue-500/20 rounded-2xl p-5">
+        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Direct Line</p>
+        <a href="tel:08146978573" class="text-white font-black text-xl tracking-tighter flex items-center gap-3">
+          <i class="fa-solid fa-headset text-blue-500 text-sm"></i> 0814 697 8573
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <section class="services-hero">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-4 mb-8">
+            <span class="h-[1px] w-12 bg-blue-400"></span>
+            <span class="text-blue-300 font-bold tracking-[0.5em] text-[10px] uppercase">Service Portfolio</span>
+          </div>
+          <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8">
+            Operational <br /><span class="text-blue-400">Excellence.</span>
+          </h1>
+          <p class="text-slate-300 text-xl font-light leading-relaxed max-w-xl">
+            A comprehensive suite of high-precision services designed for global trade, corporate efficiency, and premium lifestyle management.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          
+          <div class="md:col-span-8 group service-card bg-white rounded-[3rem] border border-slate-100 flex flex-col md:flex-row">
+            <div class="md:w-1/2 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover image-zoom" alt="Global Trade">
+            </div>
+            <div class="md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
+                <span class="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4 block">01 / Logistics</span>
+                <h3 class="text-4xl font-black text-slate-900 uppercase tracking-tighter mb-6 heading-underline">Global Trade</h3>
+                <p class="text-slate-500 font-light mb-8 leading-relaxed">
+                    Facilitating seamless international commerce through expert import/export management, customs brokerage, and cross-border regulatory compliance.
+                </p>
+                <div class="space-y-3 mb-10">
+                    <div class="flex items-center gap-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                        <i class="fa-solid fa-check text-blue-500"></i> Customs Clearance
+                    </div>
+                    <div class="flex items-center gap-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                        <i class="fa-solid fa-check text-blue-500"></i> Regulatory Documentation
+                    </div>
+                </div>
+                <a href="express-contact.html" class="btn-elegant inline-flex items-center gap-4 text-slate-900 border border-slate-900 rounded-full px-8 py-4 font-bold text-[11px] tracking-widest uppercase">
+                    Consult Trade Expert <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+          </div>
+
+          <div class="md:col-span-4 group service-card bg-slate-900 rounded-[3rem] p-10 text-white flex flex-col">
+            <div class="mb-10 text-blue-400 text-3xl">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <h3 class="text-3xl font-black uppercase tracking-tighter mb-6 heading-underline">Express Logistics</h3>
+            <p class="text-slate-400 font-light mb-8">
+                Last-mile delivery and freight forwarding with real-time tracking and clinical punctuality.
+            </p>
+            <div class="mt-auto pt-8 border-t border-white/10">
+                <ul class="mb-8 space-y-4">
+                    <li class="text-xs font-bold tracking-widest text-slate-500 uppercase italic">Next-Day Delivery</li>
+                    <li class="text-xs font-bold tracking-widest text-slate-500 uppercase italic">Fleet Tracking</li>
+                </ul>
+                <a href="express-contact.html" class="w-full text-center block bg-blue-600 text-white py-4 rounded-full font-bold text-[11px] tracking-widest uppercase hover:bg-white hover:text-slate-900 transition-all">Request Delivery</a>
+            </div>
+          </div>
+
+          <div class="md:col-span-6 group service-card bg-white rounded-[3rem] border border-slate-100">
+            <div class="h-64 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover image-zoom" alt="Laundry">
+            </div>
+            <div class="p-12">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tighter heading-underline">Professional Laundry</h3>
+                    <div class="bg-blue-50 text-blue-600 p-3 rounded-xl"><i class="fa-solid fa-shirt"></i></div>
+                </div>
+                <p class="text-slate-500 font-light mb-8 leading-relaxed">
+                    Premium garment care utilizing eco-friendly solvents and industrial-grade finishing for corporate and individual requirements.
+                </p>
+                <a href="express-contact.html" class="text-slate-900 font-black text-[11px] tracking-[0.2em] uppercase border-b-2 border-slate-900 pb-1 hover:text-blue-600 hover:border-blue-600 transition">Book Pick-up &rarr;</a>
+            </div>
+          </div>
+
+          <div class="md:col-span-6 group service-card bg-white rounded-[3rem] border border-slate-100">
+            <div class="h-64 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover image-zoom" alt="Packaging">
+            </div>
+            <div class="p-12">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tighter heading-underline">Secure Packaging</h3>
+                    <div class="bg-slate-900 text-white p-3 rounded-xl"><i class="fa-solid fa-box-archive"></i></div>
+                </div>
+                <p class="text-slate-500 font-light mb-8 leading-relaxed">
+                    Industrial-grade crating and specialized vacuum-sealing for high-value assets, fragile electronics, and heavy-duty machinery.
+                </p>
+                <a href="express-contact.html" class="text-slate-900 font-black text-[11px] tracking-[0.2em] uppercase border-b-2 border-slate-900 pb-1 hover:text-blue-600 hover:border-blue-600 transition">Get Packing Quote &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-32 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="bg-blue-600 rounded-[4rem] p-16 md:p-24 text-center relative overflow-hidden shadow-2xl shadow-blue-600/40">
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-10 leading-none">Ready to optimize <br>your operations?</h2>
+                    <div class="flex flex-col md:flex-row justify-center gap-6">
+                        <a href="express-contact.html" class="bg-white text-blue-600 px-12 py-6 rounded-full font-extrabold text-xs tracking-[0.2em] uppercase hover:bg-slate-900 hover:text-white transition-all">Start Your Project</a>
+                        <a href="tel:09115151329" class="bg-blue-700 text-white border border-blue-400 px-12 py-6 rounded-full font-extrabold text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-blue-600 transition-all">Speak to Advisor</a>
+                    </div>
+                </div>
+                <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-20 border-t border-slate-100">
+      <div class="container mx-auto px-6 text-center">
+        <img src="/assets/img/dodra.png" alt="Dodra" class="w-32 mx-auto mb-10 grayscale opacity-30" />
+        <div class="flex justify-center gap-8 mb-10 text-[10px] font-bold text-slate-400 tracking-widest uppercase">
+            <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+            <a href="#" class="hover:text-blue-600">Terms of Service</a>
+            <a href="express-contact.html" class="hover:text-blue-600">Support</a>
+        </div>
+        <p class="text-[9px] text-slate-400 font-bold uppercase tracking-[0.5em]">
+          © 2026 DODRA ENTERPRISE | EXPRESS DIVISION
+        </p>
+      </div>
+    </footer>
+
+    <script>
+        const menuTrigger = document.getElementById('menu-trigger');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Open Menu
+        menuTrigger.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        // Close Menu
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+
+        // Close menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+  </body>
+</html>
